@@ -1,17 +1,19 @@
 //SPDX-License-Identifier: MIT
 pragma solidity >=0.8.0;
 
-import "./interfaces/ierc20.sol";
-import "./interfaces/uniswapRouter.sol";
-import "./interfaces/weth.sol";
-import "./interfaces/wormhole.sol";
+import '@uniswap/v2-core/contracts/interfaces/IUniswapV2Factory.sol';
+
+import "./interfaces/IERC20.sol";
+import "./interfaces/IUniswapV2Router02.sol";
+import "./interfaces/IWETH.sol";
+import "./interfaces/IWormhole.sol";
 
 contract OGSwap {
     IWETH public eth;
     IERC20 public gtonToken;
     IUniswapV2Router02 public router;
     IUniswapV2Factory public factory;
-    Wormhole public wormhole;
+    IWormhole public wormhole;
     address public owner;
     bool public revertFlag;
     
